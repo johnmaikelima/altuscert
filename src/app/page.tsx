@@ -230,7 +230,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative w-full py-16 bg-blue-900 text-white">
+      <section className="relative w-full py-16 bg-blue-900 text-white mb-0">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-6">
             <h2 className="text-3xl md:text-4xl font-bold">Pronto para emitir seu certificado?</h2>
@@ -242,122 +242,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="relative bg-gray-900 text-gray-300 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Main Footer Content */}
-          <div className="grid md:grid-cols-4 gap-12 mb-12">
-            {/* Company Info */}
-            <div className="space-y-4">
-              <h3 className="text-xl font-bold text-white">Altus Certificados</h3>
-              <p className="text-sm text-gray-400">Emissão de certificados digitais A1 com segurança, transparência e profissionalismo.</p>
-              <div className="space-y-2 text-sm">
-                <p><strong>ALTUSTEC LTDA</strong></p>
-                <p>CNPJ: 27.111.744/0001-30</p>
-                <p>Estrada dos Vados, 551</p>
-                <p>JD Alamo - Guarulhos, SP</p>
-              </div>
-            </div>
-
-            {/* Contact Info */}
-            <div className="space-y-4">
-              <h3 className="font-bold text-white">Contato</h3>
-              <div className="space-y-2 text-sm">
-                <p>
-                  <strong>Email:</strong><br />
-                  <a href="mailto:altuscertificados@gmail.com" className="text-blue-400 hover:text-blue-300 transition">
-                    altuscertificados@gmail.com
-                  </a>
-                </p>
-                <p>
-                  <strong>WhatsApp:</strong><br />
-                  <a href="https://wa.me/5511987756034" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition">
-                    (11) 98775-6034
-                  </a>
-                  <br />
-                  <a href="https://wa.me/5511992177044" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition">
-                    (11) 99217-7044
-                  </a>
-                </p>
-                <p>
-                  <strong>Horário:</strong><br />
-                  Seg-Sex: 09h às 17h<br />
-                  Sab-Dom: Fechado
-                </p>
-              </div>
-            </div>
-
-            {/* Other Information */}
-            <div className="space-y-4">
-              <h3 className="font-bold text-white">Outras Informações</h3>
-              <div className="space-y-2 text-sm">
-                <Link href="/renovacao" className="text-gray-400 hover:text-blue-400 transition block">
-                  Renovação
-                </Link>
-                <Link href="/formas-pagamento" className="text-gray-400 hover:text-blue-400 transition block">
-                  Formas de Pagamento
-                </Link>
-                <Link href="/minha-conta" className="text-gray-400 hover:text-blue-400 transition block">
-                  Minha Conta
-                </Link>
-                <Link href="/rastrear" className="text-gray-400 hover:text-blue-400 transition block">
-                  Rastrear Pedido
-                </Link>
-              </div>
-            </div>
-
-            {/* Policies */}
-            <div className="space-y-4">
-              <h3 className="font-bold text-white">Políticas</h3>
-              <div className="space-y-2 text-sm">
-                <Link href="/politica-trocas-devolucoes" className="text-gray-400 hover:text-blue-400 transition block">
-                  Política de Trocas e Devoluções
-                </Link>
-                <Link href="/politica-privacidade" className="text-gray-400 hover:text-blue-400 transition block">
-                  Política de Privacidade
-                </Link>
-                <Link href="/politica-cookies" className="text-gray-400 hover:text-blue-400 transition block">
-                  Política de Cookies
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          {/* Security Seals */}
-          <div className="border-t border-gray-700 pt-8 mb-8">
-            <p className="text-sm text-gray-400 mb-4 font-semibold">Segurança e Confiança</p>
-            <div className="flex flex-wrap gap-6 items-center">
-              <Image
-                src="/img/selos/1692213060824-e1740152155914-1-400x144.jpg"
-                alt="Selo de Segurança"
-                width={80}
-                height={80}
-                className="h-16 w-auto"
-              />
-              <Image
-                src="/img/selos/Selo-SiteSeguro-Vidaecasa.png-400x177.webp"
-                alt="Site Seguro"
-                width={80}
-                height={80}
-                className="h-16 w-auto"
-              />
-              <Image
-                src="/img/selos/download-e1765035077631.png"
-                alt="Selo de Confiança"
-                width={80}
-                height={80}
-                className="h-16 w-auto"
-              />
-            </div>
-          </div>
-
-          {/* Copyright */}
-          <div className="border-t border-gray-700 pt-8 text-center text-sm text-gray-500">
-            <p>© 2024 Altus Certificados - ALTUSTEC LTDA. Todos os direitos reservados.</p>
-          </div>
-        </div>
-      </footer>
     </PageLayout>
   );
 }
