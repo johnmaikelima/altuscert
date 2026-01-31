@@ -86,18 +86,52 @@ export default function CheckoutContent() {
       const data = await mpResponse.json();
 
       if (data.init_point) {
-        // Usar Checkout Pro do Mercado Pago em modal
-        if (typeof window !== 'undefined' && (window as any).MercadoPago) {
-          const mp = new (window as any).MercadoPago(process.env.NEXT_PUBLIC_MERCADO_PAGO_PUBLIC_KEY);
-          
-          mp.checkout({
-            preference: {
-              id: data.preference_id,
-            },
-            autoOpen: true,
+        const publicKey = process.env.NEXT_PUBLIC_MERCADO_PAGO_PUBLIC_KEY;
+
+        if (!publicKey) {
+          console.error('Chave pública do Mercado Pago não configurada');
+          window.location.href = data.init_point;
+          return;
+        }
+
+        const waitForMercadoPago = () => {
+          return new Promise((resolve) => {
+            if (typeof window !== 'undefined' && (window as any).MercadoPago) {
+              resolve(true);
+            } else {
+              const checkInterval = setInterval(() => {
+                if ((window as any).MercadoPago) {
+                  clearInterval(checkInterval);
+                  resolve(true);
+                }
+              }, 100);
+
+              setTimeout(() => {
+                clearInterval(checkInterval);
+                resolve(false);
+              }, 5000);
+            }
           });
+        };
+
+        const mpLoaded = await waitForMercadoPago();
+
+        if (mpLoaded) {
+          try {
+            const mp = new (window as any).MercadoPago(publicKey);
+
+            mp.checkout({
+              preference: {
+                id: data.id,
+              },
+              autoOpen: true,
+            });
+          } catch (mpError) {
+            console.error('Erro ao inicializar Mercado Pago:', mpError);
+            window.location.href = data.init_point;
+          }
         } else {
-          // Fallback: redirecionar se Checkout Pro não estiver disponível
+          console.warn('Mercado Pago não carregou, redirecionando para init_point');
           window.location.href = data.init_point;
         }
       } else {

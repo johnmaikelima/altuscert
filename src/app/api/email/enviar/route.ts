@@ -118,19 +118,23 @@ export async function POST(request: NextRequest) {
       html: htmlContent,
     };
 
-    await transporter.sendMail(mailOptions);
-
-    console.log('✅ Email enviado com sucesso para:', email);
+    try {
+      await transporter.sendMail(mailOptions);
+      console.log('✅ Email enviado com sucesso para:', email);
+    } catch (emailError) {
+      console.warn('⚠️ Erro ao enviar email, mas continuando:', emailError);
+      // Não falha o pedido se o email falhar
+    }
 
     return NextResponse.json({
       success: true,
-      message: 'Email enviado com sucesso',
+      message: 'Pedido processado com sucesso',
       codigoPedido,
     });
   } catch (error) {
-    console.error('❌ Erro ao enviar email:', error);
+    console.error('❌ Erro ao processar pedido:', error);
     return NextResponse.json(
-      { error: 'Erro ao enviar email', details: String(error) },
+      { error: 'Erro ao processar pedido', details: String(error) },
       { status: 500 }
     );
   }
