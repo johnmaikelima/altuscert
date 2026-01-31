@@ -12,7 +12,7 @@ const products = [
     price: '115.00',
     currency: 'BRL',
     availability: 'in stock',
-    category: 'Services > Digital Products',
+    category: 'Software',
     brand: 'Altus Certificados',
     condition: 'new',
     gtin: '',
@@ -27,7 +27,7 @@ const products = [
     price: '99.00',
     currency: 'BRL',
     availability: 'in stock',
-    category: 'Services > Digital Products',
+    category: 'Software',
     brand: 'Altus Certificados',
     condition: 'new',
     gtin: '',
@@ -66,6 +66,11 @@ function generateXMLFeed() {
     xml += `      <g:product_type>${product.category}</g:product_type>\n`;
     xml += `      <g:brand>${product.brand}</g:brand>\n`;
     xml += `      <g:condition>${product.condition}</g:condition>\n`;
+    xml += `      <g:shipping>\n`;
+    xml += `        <g:country>BR</g:country>\n`;
+    xml += `        <g:service>Padrão</g:service>\n`;
+    xml += `        <g:price>0 BRL</g:price>\n`;
+    xml += `      </g:shipping>\n`;
     xml += '    </item>\n';
   });
 
