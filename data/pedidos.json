@@ -1,0 +1,44 @@
+[
+  {
+    "id": "CERT-ML1B58TM-22ITJI",
+    "tipo": "a1-pj",
+    "preco": 115,
+    "cliente": {
+      "nome": "john maike",
+      "email": "contato@altusci.com.br",
+      "telefone": "11987756034",
+      "cpf_cnpj": "27111744000130"
+    },
+    "status": "pendente",
+    "dataCriacao": "2026-01-30T20:00:25.836Z",
+    "dataAtualizacao": "2026-01-30T20:00:25.836Z"
+  },
+  {
+    "id": "CERT-ML1ECS3M-7NBXIP",
+    "tipo": "a1-pf",
+    "preco": 99,
+    "cliente": {
+      "nome": "john maike",
+      "email": "johnpatrocinio1@gmail.com",
+      "telefone": "11987756034",
+      "cpf_cnpj": "27111744000130"
+    },
+    "status": "pendente",
+    "dataCriacao": "2026-01-30T21:30:16.259Z",
+    "dataAtualizacao": "2026-01-30T21:30:16.259Z"
+  },
+  {
+    "id": "CERT-ML1FI8F7-N1T12O",
+    "tipo": "a1-pf",
+    "preco": 99,
+    "cliente": {
+      "nome": "john maike",
+      "email": "johnpatrocinio1@gmail.com",
+      "telefone": "11987756034",
+      "cpf_cnpj": "39699239808"
+    },
+    "status": "pendente",
+    "dataCriacao": "2026-01-30T22:02:30.308Z",
+    "dataAtualizacao": "2026-01-30T22:02:30.308Z"
+  }
+]
