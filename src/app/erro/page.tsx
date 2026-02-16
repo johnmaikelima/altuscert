@@ -2,11 +2,22 @@
 
 import Link from 'next/link';
 import { AlertCircle, MessageCircle, ArrowRight } from 'lucide-react';
+import { useEffect } from 'react';
 
 export default function ErrorPage() {
   const whatsappNumber = '5511987756034';
   const whatsappMessage = 'Olá! Tive um problema ao tentar realizar meu pagamento.';
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+  useEffect(() => {
+    // Google Ads - Purchase Error
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'purchase_error', {
+        'currency': 'BRL',
+        'value': 0
+      });
+    }
+  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-black text-white flex items-center justify-center px-4">

@@ -1,7 +1,7 @@
 'use client';
 
 import { useSearchParams } from 'next/navigation';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ArrowLeft, Loader2, Shield, CheckCircle } from 'lucide-react';
 
@@ -39,6 +39,24 @@ export default function CheckoutContent() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+
+    // Google Ads - Begin Checkout
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'begin_checkout', {
+        'items': [
+          {
+            'item_id': tipo,
+            'item_name': cert.nome,
+            'item_category': 'Certificado Digital',
+            'price': cert.preco,
+            'currency': 'BRL',
+            'quantity': 1
+          }
+        ],
+        'value': cert.preco,
+        'currency': 'BRL'
+      });
+    }
 
     try {
       // 1. Criar pedido no sistema

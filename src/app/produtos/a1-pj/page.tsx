@@ -11,144 +11,21 @@ export default function CertificadoA1PJ() {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://altuscertificados.com.br';
 
   useEffect(() => {
-    // Product Schema
-    const productSchema = {
-      '@context': 'https://schema.org/',
-      '@type': 'Product',
-      'name': 'Certificado Digital A1 - Pessoa Jurídica (PJ)',
-      'image': `${baseUrl}/img/certificadopj.jpeg`,
-      'description': 'Certificado digital A1 para pessoa jurídica emitido por videoconferência. Válido por 12 meses, ideal para empresas que precisam assinar documentos digitalmente e realizar transações seguras.',
-      'brand': {
-        '@type': 'Brand',
-        'name': 'Altus Certificados'
-      },
-      'offers': {
-        '@type': 'Offer',
-        'url': `${baseUrl}/produtos/a1-pj`,
-        'priceCurrency': 'BRL',
-        'price': '89.90',
-        'availability': 'https://schema.org/InStock',
-        'seller': {
-          '@type': 'Organization',
-          'name': 'Altus Certificados'
-        }
-      },
-    };
-
-    // Breadcrumb Schema
-    const breadcrumbSchema = {
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      'itemListElement': [
-        {
-          '@type': 'ListItem',
-          'position': 1,
-          'name': 'Início',
-          'item': `${baseUrl}`
-        },
-        {
-          '@type': 'ListItem',
-          'position': 2,
-          'name': 'Produtos',
-          'item': `${baseUrl}/produtos`
-        },
-        {
-          '@type': 'ListItem',
-          'position': 3,
-          'name': 'Certificado Digital A1 PJ',
-          'item': `${baseUrl}/produtos/a1-pj`
-        }
-      ]
-    };
-
-    // FAQ Schema
-    const faqSchema = {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      'mainEntity': [
-        {
-          '@type': 'Question',
-          'name': 'Quanto tempo leva para receber o certificado?',
-          'acceptedAnswer': {
-            '@type': 'Answer',
-            'text': 'Após a aprovação da videoconferência, você recebe o protocolo de emissão imediatamente. O certificado é gerado em até 24 horas.'
+    // Google Ads - View Item (Product Page)
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'view_item', {
+        'items': [
+          {
+            'item_id': 'a1-pj',
+            'item_name': 'Certificado Digital A1 PJ',
+            'item_category': 'Certificado Digital',
+            'price': 89.90,
+            'currency': 'BRL'
           }
-        },
-        {
-          '@type': 'Question',
-          'name': 'Qual é a validade do certificado?',
-          'acceptedAnswer': {
-            '@type': 'Answer',
-            'text': 'O certificado A1 é válido por 12 meses a partir da data de emissão.'
-          }
-        },
-        {
-          '@type': 'Question',
-          'name': 'Posso renovar o certificado?',
-          'acceptedAnswer': {
-            '@type': 'Answer',
-            'text': 'Sim! Você pode renovar o certificado antes da data de expiração. Consulte nossa página de renovação para mais informações.'
-          }
-        },
-        {
-          '@type': 'Question',
-          'name': 'Preciso de suporte?',
-          'acceptedAnswer': {
-            '@type': 'Answer',
-            'text': 'Sim! Nossa equipe está disponível 24/7 via WhatsApp para ajudar com qualquer dúvida.'
-          }
-        }
-      ]
-    };
-
-    // Add Product Schema
-    const productScript = document.createElement('script');
-    productScript.type = 'application/ld+json';
-    productScript.innerHTML = JSON.stringify(productSchema);
-    document.head.appendChild(productScript);
-
-    // Add Breadcrumb Schema
-    const breadcrumbScript = document.createElement('script');
-    breadcrumbScript.type = 'application/ld+json';
-    breadcrumbScript.innerHTML = JSON.stringify(breadcrumbSchema);
-    document.head.appendChild(breadcrumbScript);
-
-    // Add FAQ Schema
-    const faqScript = document.createElement('script');
-    faqScript.type = 'application/ld+json';
-    faqScript.innerHTML = JSON.stringify(faqSchema);
-    document.head.appendChild(faqScript);
-
-    // Add Open Graph Meta Tags
-    const metaTags = [
-      { property: 'og:title', content: 'Certificado Digital A1 - Pessoa Jurídica (PJ)' },
-      { property: 'og:description', content: 'Certificado digital A1 para pessoa jurídica emitido por videoconferência. Válido por 12 meses. Compre agora!' },
-      { property: 'og:image', content: `${baseUrl}/img/certificadopj.jpeg` },
-      { property: 'og:url', content: `${baseUrl}/produtos/a1-pj` },
-      { property: 'og:type', content: 'product' },
-      { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:title', content: 'Certificado Digital A1 - Pessoa Jurídica (PJ)' },
-      { name: 'twitter:description', content: 'Certificado digital A1 para pessoa jurídica emitido por videoconferência. Válido por 12 meses.' },
-      { name: 'twitter:image', content: `${baseUrl}/img/certificadopj.jpeg` }
-    ];
-
-    metaTags.forEach(tag => {
-      const meta = document.createElement('meta');
-      if (tag.property) meta.setAttribute('property', tag.property);
-      if (tag.name) meta.setAttribute('name', tag.name);
-      meta.content = tag.content;
-      document.head.appendChild(meta);
-    });
-
-    return () => {
-      document.head.removeChild(productScript);
-      document.head.removeChild(faqScript);
-      metaTags.forEach(() => {
-        const meta = document.querySelector(`meta[property="og:title"], meta[name="twitter:card"]`);
-        if (meta) document.head.removeChild(meta);
+        ]
       });
-    };
-  }, [baseUrl]);
+    }
+  }, []);
 
   return (
     <PageLayout title="Certificado A1 PJ">
@@ -182,7 +59,7 @@ export default function CertificadoA1PJ() {
             </div>
             <div className="w-full md:w-64 flex-shrink-0">
               <Image
-                src="/img/certificadopj.jpeg"
+                src="/img/certificadopj.webp"
                 alt="Certificado Digital A1 PJ"
                 width={300}
                 height={300}

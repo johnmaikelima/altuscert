@@ -23,7 +23,17 @@ export default function SuccessContent() {
       localStorage.removeItem('pedidoAtual');
     }
     setLoading(false);
-  }, []);
+
+    // Google Ads Conversion Tracking
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'conversion', {
+        'send_to': 'AW-17921729189/OwcTCMvx5vkbEKXF3-FC',
+        'value': 1.0,
+        'currency': 'BRL',
+        'transaction_id': codigoPedido || '',
+      });
+    }
+  }, [codigoPedido]);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-black text-white flex items-center justify-center px-4">

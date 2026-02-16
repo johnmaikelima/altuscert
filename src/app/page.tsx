@@ -13,6 +13,28 @@ export default function Home() {
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
   useEffect(() => {
+    // Google Ads - View Item List (Homepage)
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'view_item_list', {
+        'items': [
+          {
+            'item_id': 'a1-pj',
+            'item_name': 'Certificado Digital A1 PJ',
+            'item_category': 'Certificado Digital',
+            'price': 89.90,
+            'currency': 'BRL'
+          },
+          {
+            'item_id': 'a1-pf',
+            'item_name': 'Certificado Digital A1 PF',
+            'item_category': 'Certificado Digital',
+            'price': 85.00,
+            'currency': 'BRL'
+          }
+        ]
+      });
+    }
+
     // Organization Schema
     const organizationSchema = {
       '@context': 'https://schema.org',
@@ -85,7 +107,7 @@ export default function Home() {
             </div>
             <div className="relative h-96 md:h-full rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/img/img.png"
+                src="/img/img.webp"
                 alt="Certificado Digital"
                 fill
                 className="object-cover"
@@ -132,7 +154,7 @@ export default function Home() {
           {/* Desktop - Imagem PC */}
           <div className="hidden md:block">
             <Image
-              src="/img/passopc.jpeg"
+              src="/img/passopc.webp"
               alt="Passo a passo - Desktop"
               width={1200}
               height={600}
@@ -144,7 +166,7 @@ export default function Home() {
           {/* Mobile - Imagem Celular */}
           <div className="md:hidden">
             <Image
-              src="/img/passocel.jpeg"
+              src="/img/passocel.webp"
               alt="Passo a passo - Mobile"
               width={600}
               height={1000}

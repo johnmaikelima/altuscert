@@ -12,6 +12,7 @@ interface PageLayoutProps {
 
 export default function PageLayout({ children, title }: PageLayoutProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [productDropdownOpen, setProductDropdownOpen] = useState(false);
   const whatsappNumber = '5511987756034';
   const whatsappMessage = 'Olá! Gostaria de saber mais sobre os certificados digitais.';
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
@@ -30,57 +31,76 @@ export default function PageLayout({ children, title }: PageLayoutProps) {
   return (
     <div className="min-h-screen bg-white flex flex-col">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-gray-100 text-gray-900 shadow-lg">
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+      <header className="sticky top-0 z-50 bg-white text-gray-900 border-b border-slate-200 backdrop-blur">
+        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-wrap items-center justify-between gap-3">
           <Link href="/" className="hover:opacity-90 transition">
-            <div className="h-12 flex items-center justify-center">
+            <div className="h-14 flex items-center justify-center">
               <Image
-                src="/img/logo4.png"
+                src="/img/novologo.png"
                 alt="Altus Certificados Logo"
-                width={669}
-                height={223}
+                width={280}
+                height={110}
                 className="h-12 w-auto"
                 priority
               />
             </div>
           </Link>
 
-          <div className="hidden md:flex gap-1 items-center">
-            <Link href="/" className="px-4 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-200 transition duration-300 font-medium rounded-lg">
+          <div className="hidden lg:flex gap-2 items-center">
+            <Link
+              href="/"
+              className="px-4 py-2 text-sm font-semibold uppercase tracking-wide text-slate-500 hover:text-slate-900 hover:bg-slate-100 rounded-full transition"
+            >
               Home
             </Link>
-            <div className="relative group">
-              <button className="px-4 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-200 transition duration-300 font-medium rounded-lg flex items-center gap-1">
+            <div 
+              className="relative group"
+              onMouseEnter={() => setProductDropdownOpen(true)}
+              onMouseLeave={() => setProductDropdownOpen(false)}
+            >
+              <button className="px-4 py-2 text-sm font-semibold uppercase tracking-wide text-slate-500 hover:text-slate-900 hover:bg-slate-100 rounded-full transition flex items-center gap-1">
                 Produtos
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                 </svg>
               </button>
-              <div className="absolute left-0 mt-0 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300 z-10">
-                <Link href="/produtos/a1-pj" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-t-lg first:rounded-t-lg">
+              <div className={`absolute mt-0 w-48 rounded-2xl border border-slate-200 bg-white shadow-xl transition-all duration-150 z-50 pt-2 ${productDropdownOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}>
+                <Link href="/produtos/a1-pj" className="block px-4 py-3 text-sm text-slate-600 hover:bg-slate-100">
                   Certificado A1 PJ
                 </Link>
-                <Link href="/produtos/a1-pf" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-b-lg last:rounded-b-lg">
+                <Link href="/produtos/a1-pf" className="block px-4 py-3 text-sm text-slate-600 hover:bg-slate-100">
                   Certificado A1 PF
                 </Link>
               </div>
             </div>
-            <Link href="/seja-parceiro" className="px-4 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-200 transition duration-300 font-medium rounded-lg">
+            <Link
+              href="/seja-parceiro"
+              className="px-4 py-2 text-sm font-semibold uppercase tracking-wide text-slate-500 hover:text-slate-900 hover:bg-slate-100 rounded-full transition"
+            >
               Seja Parceiro
             </Link>
-            <div className="w-px h-6 bg-gray-300 mx-2"></div>
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg transition duration-300 flex items-center gap-2 font-semibold shadow-md hover:shadow-lg">
-              <MessageCircle size={18} />
+            <div className="w-px h-6 bg-slate-200 mx-2"></div>
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-2 rounded-full bg-gradient-to-r from-emerald-600 to-green-500 text-white font-semibold shadow-lg shadow-emerald-300/70"
+            >
               WhatsApp
             </a>
           </div>
 
-          <div className="md:hidden flex items-center gap-2">
-            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="p-2 hover:bg-gray-200 rounded-lg transition">
+          <div className="lg:hidden flex items-center gap-2">
+            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="p-2 bg-white/80 hover:bg-white rounded-full border border-slate-200 shadow transition">
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded-lg transition duration-300 flex items-center gap-1 font-semibold shadow-md">
-              <MessageCircle size={18} />
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3 py-2 rounded-full bg-gradient-to-r from-emerald-600 to-green-500 text-white font-semibold shadow-lg shadow-emerald-300/70"
+            >
+              WhatsApp
             </a>
           </div>
         </nav>
@@ -117,15 +137,21 @@ export default function PageLayout({ children, title }: PageLayoutProps) {
         {children}
       </main>
 
-      <div className="fixed bottom-6 right-6 z-50 flex items-center gap-3">
-        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-green-600 text-white shadow-[0_10px_20px_rgba(5,150,105,0.4)]">
-          <WhatsAppIcon />
-        </div>
+      {/* Floating WhatsApp Button - Desktop Only */}
+      <div className="hidden md:fixed md:bottom-6 md:right-6 md:z-50 md:flex flex-col items-center gap-3 text-center">
         <a
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded-full bg-green-600 px-5 py-3 text-white font-semibold shadow-[0_10px_25px_rgba(5,150,105,0.4)] transition hover:bg-green-500"
+          className="relative h-20 w-20 overflow-hidden rounded-full bg-white shadow-[0_15px_30px_rgba(15,23,42,0.25)] transition-transform duration-300 hover:scale-105"
+        >
+          <Image src="/img/mascote.webp" alt="Mascote" fill sizes="80px" className="object-cover" />
+        </a>
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block w-full rounded-full bg-gradient-to-r from-emerald-600 to-green-500 px-6 py-3 text-white font-semibold tracking-wide shadow-[0_20px_35px_rgba(16,185,129,0.35)] transition hover:translate-y-0.5 hover:brightness-110"
         >
           Comprar pelo WhatsApp
         </a>
