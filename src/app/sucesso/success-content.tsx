@@ -10,7 +10,7 @@ export default function SuccessContent() {
   const [codigoPedido, setCodigoPedido] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
-  const whatsappNumber = '5511987756034';
+  const whatsappNumber = '5511992177044';
   const whatsappMessage = 'Olá! Realizei uma compra e gostaria de acompanhar meu certificado.';
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 

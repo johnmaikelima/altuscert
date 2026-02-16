@@ -26,8 +26,8 @@ export const CERTIFICADOS = {
 };
 
 export const WHATSAPP = {
-  numero: '5511987756034',
-  numero_formatado: '(11) 98775-6034',
+  numero: '5511992177044',
+  numero_formatado: '(11) 99217-7044',
 };
 
 export const SEO = {

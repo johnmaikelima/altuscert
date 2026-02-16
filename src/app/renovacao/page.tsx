@@ -97,8 +97,8 @@ export default function Renovacao() {
               Entre em contato conosco via WhatsApp ou email. Nossa equipe está pronta para ajudar com sua renovação!
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="https://wa.me/5511987756034" target="_blank" rel="noopener noreferrer" className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition text-center">
-                WhatsApp: (11) 98775-6034
+              <a href={`https://wa.me/${'5511992177044'}`} target="_blank" rel="noopener noreferrer" className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition text-center">
+                WhatsApp: (11) 99217-7044
               </a>
               <a href="mailto:altuscertificados@gmail.com" className="bg-blue-900 hover:bg-blue-800 text-white px-6 py-3 rounded-lg font-semibold transition text-center">
                 Email: altuscertificados@gmail.com

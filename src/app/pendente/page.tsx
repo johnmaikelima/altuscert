@@ -5,7 +5,7 @@ import { Clock, MessageCircle, ArrowRight } from 'lucide-react';
 import { useEffect } from 'react';
 
 export default function PendingPage() {
-  const whatsappNumber = '5511987756034';
+  const whatsappNumber = '5511992177044';
   const whatsappMessage = 'Olá! Meu pagamento está pendente e gostaria de acompanhar.';
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 

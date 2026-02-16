@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { CheckCircle, TrendingUp, Shield, Zap, Users, Award, MessageCircle } from 'lucide-react';
 
 export default function SejaParceiro() {
-  const whatsappNumber = '5511987756034';
+  const whatsappNumber = '5511992177044';
   const whatsappMessage = 'Olá! Tenho interesse em ser parceiro da Altus Certificados.';
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 

@@ -244,7 +244,7 @@ export default function RastrearPage() {
             <div className="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border border-cyan-500/30 rounded-2xl p-6">
               <p className="text-slate-300 mb-4">Dúvidas sobre seu pedido?</p>
               <a
-                href="https://wa.me/5511987756034?text=Olá! Tenho dúvidas sobre meu pedido"
+                href={`https://wa.me/5511992177044?text=Olá! Tenho dúvidas sobre meu pedido`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-6 py-3 rounded-lg font-semibold transition"

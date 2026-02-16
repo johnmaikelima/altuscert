@@ -30,7 +30,7 @@ export async function POST(request: NextRequest) {
 
     const tipoCertificado = tipo === 'a1-pj' ? 'Certificado A1 PJ' : 'Certificado A1 PF';
     const fromName = process.env.GMAIL_FROM_NAME || 'Altus Certificados';
-    const whatsappNumber = '5511987756034';
+    const whatsappNumber = '5511992177044';
     const whatsappUrl = `https://wa.me/${whatsappNumber}`;
     
     // Determinar status e mensagem

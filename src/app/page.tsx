@@ -8,7 +8,7 @@ import { useEffect } from 'react';
 
 export default function Home() {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://altuscertificados.com.br';
-  const whatsappNumber = '5511987756034';
+  const whatsappNumber = '5511992177044';
   const whatsappMessage = 'Olá! Gostaria de saber mais sobre os certificados digitais.';
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 

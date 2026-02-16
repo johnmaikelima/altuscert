@@ -5,7 +5,7 @@ import { AlertCircle, MessageCircle, ArrowRight } from 'lucide-react';
 import { useEffect } from 'react';
 
 export default function ErrorPage() {
-  const whatsappNumber = '5511987756034';
+  const whatsappNumber = '5511992177044';
   const whatsappMessage = 'Olá! Tive um problema ao tentar realizar meu pagamento.';
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
