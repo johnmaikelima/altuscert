@@ -16,24 +16,34 @@ export default function SuccessContent() {
 
   useEffect(() => {
     // Recuperar dados da sessão ou localStorage
+    let pedidoId = '';
     const pedidoData = localStorage.getItem('pedidoAtual');
     if (pedidoData) {
       const { id } = JSON.parse(pedidoData);
+      pedidoId = id;
       setCodigoPedido(id);
       localStorage.removeItem('pedidoAtual');
     }
     setLoading(false);
 
-    // Google Ads Conversion Tracking
+    // Google Ads Conversion Tracking - Dispara imediatamente ao carregar a página
     if (typeof window !== 'undefined' && (window as any).gtag) {
+      console.log('📊 Enviando evento de conversão para Google Ads:', {
+        'send_to': 'AW-17921729189/OwcTCMvx5vkbEKXF3-FC',
+        'value': 1.0,
+        'currency': 'BRL',
+        'transaction_id': pedidoId || 'direct_access',
+      });
       (window as any).gtag('event', 'conversion', {
         'send_to': 'AW-17921729189/OwcTCMvx5vkbEKXF3-FC',
         'value': 1.0,
         'currency': 'BRL',
-        'transaction_id': codigoPedido || '',
+        'transaction_id': pedidoId || 'direct_access',
       });
+    } else {
+      console.warn('⚠️ gtag não disponível ou window undefined');
     }
-  }, [codigoPedido]);
+  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-black text-white flex items-center justify-center px-4">
