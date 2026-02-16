@@ -42,6 +42,21 @@ export default function RootLayout({
           id="mercado-pago-sdk"
         />
         <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17921729189"
+          strategy="afterInteractive"
+          id="google-ads-script"
+        />
+        <Script
+          id="google-ads-config"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'AW-17921729189');`,
+          }}
+        />
+        <Script
           id="gtm-script"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
