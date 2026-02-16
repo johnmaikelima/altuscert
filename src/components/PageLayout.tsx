@@ -16,6 +16,17 @@ export default function PageLayout({ children, title }: PageLayoutProps) {
   const whatsappMessage = 'Olá! Gostaria de saber mais sobre os certificados digitais.';
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
+  const WhatsAppIcon = () => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 448 512"
+      className="h-5 w-5"
+      fill="currentColor"
+    >
+      <path d="M380.9 97.1C339 55.2 283.2 32 224.1 32c-113.7 0-206 92.3-206 206 0 36.2 9.5 71.5 27.6 102.8L4 480l142.3-40.1c29 15.9 61.7 24.8 97.7 24.8h.1c113.6 0 206-92.3 206-206 0-59-23.2-114.9-65.2-156.5zM224.1 383.5c-28.7 0-56.7-7.6-81-22.1l-5.8-3.6-84.3 23.7 22.5-81.3-3.7-5.9C80 273.4 72 245.6 72 215.7c0-83.3 67.6-150.9 150.9-150.9 40.3 0 78.1 15.7 106.6 44.2 28.4 28.4 44.1 66.2 44.1 106.5 0 83.3-67.6 150.9-150.9 150.9zm81.5-111.4c-4.5-2.3-26.7-13.2-30.9-14.7-4.2-1.5-7.3-2.3-10.4 2.3-3 4.5-11.7 14.7-14.4 17.7-2.7 3-5.5 3.4-10 1.1-4.5-2.3-19-7-36.2-22.2-13.4-12-22.4-26.8-25-31.4-2.6-4.5-.3-6.9 1.9-9.1 1.9-1.9 4.2-5 6.3-7.5 2.1-2.4 2.8-4.5 4.2-7.4 1.3-3 0.7-5.6-.4-7.9-1.1-2.3-10.4-25.1-14.3-34.4-3.7-8.9-7.5-7.7-10.4-7.8-2.7-.1-5.8-.1-8.9-.1-3 0-7.9 1.1-12 5.6-4.2 4.5-16.1 15.7-16.1 38.3 0 22.6 16.5 44.5 18.8 47.5 2.3 3 32.5 49.7 78.8 68.4 53.6 22.2 53.6 14.8 63.2 13.8 9.7-1 30.9-12.6 35.3-24.8 4.4-12.2 4.4-22.6 3.1-24.8-1.3-2.3-4.7-3.7-9.1-6z" />
+    </svg>
+  );
+
   return (
     <div className="min-h-screen bg-white flex flex-col">
       {/* Header */}
@@ -105,6 +116,20 @@ export default function PageLayout({ children, title }: PageLayoutProps) {
       <main className="flex-1">
         {children}
       </main>
+
+      <div className="fixed bottom-6 right-6 z-50 flex items-center gap-3">
+        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-green-600 text-white shadow-[0_10px_20px_rgba(5,150,105,0.4)]">
+          <WhatsAppIcon />
+        </div>
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-full bg-green-600 px-5 py-3 text-white font-semibold shadow-[0_10px_25px_rgba(5,150,105,0.4)] transition hover:bg-green-500"
+        >
+          Comprar pelo WhatsApp
+        </a>
+      </div>
 
       {/* Footer */}
       <footer className="relative bg-gray-900 text-gray-300 py-16">

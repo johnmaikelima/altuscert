@@ -3,7 +3,7 @@ export const CERTIFICADOS = {
     id: 'a1-pj',
     nome: 'Certificado A1 PJ',
     descricao: 'Para Pessoas Jurídicas - Empresas e Negócios',
-    preco: 115.00,
+    preco: 89.90,
     features: [
       'Válido para assinatura digital',
       'Acesso a sistemas governamentais',
@@ -15,7 +15,7 @@ export const CERTIFICADOS = {
     id: 'a1-pf',
     nome: 'Certificado A1 PF',
     descricao: 'Para Pessoas Físicas - Profissionais Autônomos',
-    preco: 99.00,
+    preco: 85.00,
     features: [
       'Válido para assinatura digital',
       'Acesso a sistemas governamentais',

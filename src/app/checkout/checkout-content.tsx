@@ -19,12 +19,12 @@ export default function CheckoutContent() {
   const certificados = {
     'a1-pj': {
       nome: 'Certificado A1 PJ',
-      preco: 115.00,
+      preco: 89.90,
       descricao: 'Para Pessoas Jurídicas',
     },
     'a1-pf': {
       nome: 'Certificado A1 PF',
-      preco: 99.00,
+      preco: 85.00,
       descricao: 'Para Pessoas Físicas',
     },
   };

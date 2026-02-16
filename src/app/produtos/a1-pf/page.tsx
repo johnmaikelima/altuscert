@@ -26,7 +26,7 @@ export default function CertificadoA1PF() {
         '@type': 'Offer',
         'url': `${baseUrl}/produtos/a1-pf`,
         'priceCurrency': 'BRL',
-        'price': '99.00',
+        'price': '85.00',
         'availability': 'https://schema.org/InStock',
         'seller': {
           '@type': 'Organization',
@@ -207,7 +207,7 @@ export default function CertificadoA1PF() {
             {/* Preço */}
             <div className="group">
               <p className="text-xs text-gray-400 font-bold uppercase tracking-wider mb-3">Preço</p>
-              <p className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-blue-300 bg-clip-text text-transparent group-hover:from-blue-300 group-hover:to-blue-200 transition">R$ 99,00</p>
+              <p className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-blue-300 bg-clip-text text-transparent group-hover:from-blue-300 group-hover:to-blue-200 transition">R$ 85,00</p>
             </div>
           </div>
         </div>
@@ -419,7 +419,7 @@ export default function CertificadoA1PF() {
           <h2 className="text-2xl font-bold mb-4">Pronto para começar?</h2>
           <p className="text-blue-100 mb-6">Clique no botão abaixo para agendar sua videoconferência</p>
           <Link href="/checkout?tipo=a1-pf" className="inline-block bg-white text-blue-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
-            Comprar Agora - R$ 99,00
+            Comprar Agora - R$ 85,00
           </Link>
         </div>
 
@@ -450,7 +450,7 @@ export default function CertificadoA1PF() {
       {/* Botão Flutuante de Compra - Mobile Only */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-2xl p-4 z-40">
         <Link href="/checkout?tipo=a1-pf" className="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-4 rounded-lg font-bold transition text-center block">
-          COMPRE AGORA - R$ 99,00
+          COMPRE AGORA - R$ 85,00
         </Link>
       </div>
 

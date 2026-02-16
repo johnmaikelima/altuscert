@@ -80,12 +80,12 @@ export default function Renovacao() {
             <div className="grid md:grid-cols-2 gap-6">
               <div className="p-6 bg-white rounded-lg border-2 border-gray-300">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Certificado A1 PF</h3>
-                <p className="text-3xl font-bold text-blue-900 mb-4">R$ 79,00</p>
+                <p className="text-3xl font-bold text-blue-900 mb-4">R$ 85,00</p>
                 <p className="text-gray-700 text-sm">Renovação para Pessoa Física</p>
               </div>
               <div className="p-6 bg-white rounded-lg border-2 border-blue-400">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Certificado A1 PJ</h3>
-                <p className="text-3xl font-bold text-blue-900 mb-4">R$ 99,00</p>
+                <p className="text-3xl font-bold text-blue-900 mb-4">R$ 89,90</p>
                 <p className="text-gray-700 text-sm">Renovação para Pessoa Jurídica</p>
               </div>
             </div>

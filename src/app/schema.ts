@@ -26,7 +26,7 @@ export const productSchemaA1PJ = {
     '@type': 'Offer',
     url: 'http://localhost:3000/checkout?tipo=a1-pj',
     priceCurrency: 'BRL',
-    price: '115.00',
+    price: '89.90',
     availability: 'https://schema.org/InStock',
   },
 };
@@ -44,7 +44,7 @@ export const productSchemaA1PF = {
     '@type': 'Offer',
     url: 'http://localhost:3000/checkout?tipo=a1-pf',
     priceCurrency: 'BRL',
-    price: '99.00',
+    price: '85.00',
     availability: 'https://schema.org/InStock',
   },
 };

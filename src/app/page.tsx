@@ -171,7 +171,7 @@ export default function Home() {
                   <p className="text-gray-700">Para Pessoas Jurídicas</p>
                 </div>
                 <div className="space-y-2">
-                  <span className="text-4xl font-bold text-blue-900">R$ 115,00</span>
+                  <span className="text-4xl font-bold text-blue-900">R$ 89,90</span>
                   <p className="text-gray-700 text-sm">Válido por 1 ano</p>
                 </div>
                 <ul className="space-y-3">
@@ -204,7 +204,7 @@ export default function Home() {
                   <p className="text-gray-700">Para Pessoas Físicas</p>
                 </div>
                 <div className="space-y-2">
-                  <span className="text-4xl font-bold text-blue-900">R$ 99,00</span>
+                  <span className="text-4xl font-bold text-blue-900">R$ 85,00</span>
                   <p className="text-gray-700 text-sm">Válido por 1 ano</p>
                 </div>
                 <ul className="space-y-3">
