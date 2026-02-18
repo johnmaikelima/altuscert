@@ -92,6 +92,21 @@ export default function CertificadoA1PJ() {
 
       {/* Conteúdo Principal */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Aviso Importante - CNH Obrigatória */}
+        <div className="mb-12 bg-gradient-to-r from-amber-50 to-orange-50 border-l-4 border-amber-500 rounded-lg p-6 shadow-md">
+          <div className="flex items-start gap-4">
+            <div className="flex-shrink-0">
+              <div className="flex items-center justify-center h-10 w-10 rounded-full bg-amber-500 text-white font-bold">!</div>
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-amber-900 mb-2">Documentos Necessários</h3>
+              <p className="text-amber-800 leading-relaxed">
+                Para a emissão do Certificado Digital A1, é <strong>obrigatório enviar uma cópia da CNH (Carteira Nacional de Habilitação) válida</strong> como anexo junto aos demais documentos solicitados. Este documento é necessário para confirmar sua identidade e garantir a segurança da transação.
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Descrição */}
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Sobre o Produto</h2>

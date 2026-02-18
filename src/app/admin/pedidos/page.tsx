@@ -174,6 +174,11 @@ export default function PedidosAdminPage() {
                       <p className="text-slate-400 text-sm mb-1">Telefone</p>
                       <p className="text-sm">{pedido.cliente.telefone}</p>
                     </div>
+
+                    <div>
+                      <p className="text-slate-400 text-sm mb-1">CPF/CNPJ</p>
+                      <p className="text-sm font-mono">{pedido.cliente.cpf_cnpj || 'Não informado'}</p>
+                    </div>
                   </div>
                 </div>
 

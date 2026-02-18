@@ -80,7 +80,9 @@ export async function POST(request: NextRequest) {
     const bodyText = await request.text();
     const body = JSON.parse(bodyText);
     
-    console.log('Webhook Mercado Pago recebido:', body);
+    console.log('🔔 Webhook Mercado Pago recebido:', body);
+    console.log('📍 URL do webhook:', request.url);
+    console.log('⏰ Timestamp:', new Date().toISOString());
 
     // Validar assinatura do webhook (em produção)
     if (!validarAssinatura(request, bodyText)) {
