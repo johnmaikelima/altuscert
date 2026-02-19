@@ -101,17 +101,66 @@ export default function CertificadoA1PJ() {
             <div>
               <h3 className="text-lg font-bold text-amber-900 mb-3">Documentos Necessários para Emissão</h3>
               <div className="text-amber-800 leading-relaxed space-y-3">
-                <div>
-                  <p className="font-semibold mb-1">📋 Identificação (obrigatório):</p>
-                  <p><strong>CNH (Carteira Nacional de Habilitação) válida</strong> - Único documento aceito para identificação</p>
-                </div>
-                <div>
-                  <p className="font-semibold mb-1">🏢 Comprovante de Empresa (obrigatório - escolha uma opção):</p>
-                  <ul className="list-disc list-inside space-y-1 ml-2">
-                    <li><strong>Contrato Social</strong> da empresa</li>
-                    <li><strong>Requerimento de Empresário</strong> (para MEI)</li>
-                    <li><strong>QSA2</strong> emitido pelo <a href="https://www.gov.br/empresas-e-negocios/pt-br/redesim/comprovantes/emitir-comprovante-autenticado" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">gov.br</a> (Comprovante de Sócio/Administrador)</li>
-                  </ul>
+                <div className="space-y-4">
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0">
+                      <div className="flex items-center justify-center h-8 w-8 rounded-full bg-blue-100 text-blue-600">
+                        <span className="text-lg">🆔</span>
+                      </div>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-amber-900">Identificação (obrigatório)</p>
+                      <p className="text-sm text-amber-800 mt-1"><strong>CNH (Carteira Nacional de Habilitação) válida</strong></p>
+                      <p className="text-xs text-amber-700 mt-1">Único documento aceito para identificação</p>
+                    </div>
+                  </div>
+
+                  <div>
+                    <p className="font-semibold text-amber-900 mb-3 flex items-center gap-2">
+                      <span className="text-lg">🏢</span>
+                      Comprovante de Empresa (obrigatório - escolha uma opção)
+                    </p>
+                    <p className="text-xs text-amber-700 mb-3 ml-8 italic">
+                      💡 O <strong>QSA2</strong> substitui o Contrato Social ou Requerimento de Empresário
+                    </p>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-3 ml-8">
+                      <div className="bg-green-50 border-l-4 border-green-500 p-3 rounded">
+                        <div className="flex items-start gap-2">
+                          <span className="text-lg">⭐</span>
+                          <div className="flex-1">
+                            <p className="font-semibold text-green-900">QSA2</p>
+                            <p className="text-xs text-green-600 font-bold mt-1">PREFERÊNCIA</p>
+                            <p className="text-xs text-green-800 mt-2">
+                              Emitido pelo <a href="https://www.gov.br/empresas-e-negocios/pt-br/redesim/comprovantes/emitir-comprovante-autenticado" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline font-semibold">gov.br</a>
+                            </p>
+                            <a href="/tutorial-qsa2" className="inline-block mt-2 text-xs bg-green-600 hover:bg-green-700 text-white px-2 py-1 rounded transition font-semibold">
+                              📖 Ver Tutorial
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="bg-gray-50 border-l-4 border-gray-300 p-3 rounded">
+                        <div className="flex items-start gap-2">
+                          <span className="text-lg">📄</span>
+                          <div>
+                            <p className="font-semibold text-gray-900">Contrato Social</p>
+                            <p className="text-xs text-gray-700 mt-2">Da empresa</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="bg-gray-50 border-l-4 border-gray-300 p-3 rounded">
+                        <div className="flex items-start gap-2">
+                          <span className="text-lg">📋</span>
+                          <div>
+                            <p className="font-semibold text-gray-900">Requerimento de Empresário</p>
+                            <p className="text-xs text-gray-700 mt-2">Para MEI</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

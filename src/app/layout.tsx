@@ -42,9 +42,10 @@ export default function RootLayout({
           id="mercado-pago-sdk"
         />
         <Script
+          async
           src="https://www.googletagmanager.com/gtag/js?id=AW-17921729189"
           strategy="afterInteractive"
-          id="google-ads-script"
+          id="google-ads-gtag"
         />
         <Script
           id="google-ads-config"

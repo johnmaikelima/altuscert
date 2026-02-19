@@ -26,23 +26,35 @@ export default function SuccessContent() {
     }
     setLoading(false);
 
-    // Google Ads Conversion Tracking - Dispara imediatamente ao carregar a página
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      console.log('📊 Enviando evento de conversão para Google Ads:', {
-        'send_to': 'AW-17921729189/OwcTCMvx5vkbEKXF3-FC',
-        'value': 1.0,
-        'currency': 'BRL',
-        'transaction_id': pedidoId || 'direct_access',
-      });
-      (window as any).gtag('event', 'conversion', {
-        'send_to': 'AW-17921729189/OwcTCMvx5vkbEKXF3-FC',
-        'value': 1.0,
-        'currency': 'BRL',
-        'transaction_id': pedidoId || 'direct_access',
-      });
-    } else {
-      console.warn('⚠️ gtag não disponível ou window undefined');
-    }
+    // Google Analytics Conversion Tracking
+    const trackConversion = () => {
+      if (typeof window !== 'undefined' && (window as any).gtag) {
+        const conversionData = {
+          'event': 'purchase',
+          'value': 89.90,
+          'currency': 'BRL',
+          'transaction_id': pedidoId || 'direct_access',
+          'items': [
+            {
+              'item_id': 'certificado-a1',
+              'item_name': 'Certificado Digital A1',
+              'price': 89.90,
+              'quantity': 1,
+            }
+          ]
+        };
+        
+        console.log('📊 Enviando evento de conversão para Google Analytics:', conversionData);
+        (window as any).gtag('event', 'purchase', conversionData);
+        console.log('✅ Evento de compra disparado com sucesso no Google Analytics');
+      } else {
+        console.warn('⚠️ gtag não disponível ainda, tentando novamente em 1000ms');
+        setTimeout(trackConversion, 1000);
+      }
+    };
+
+    // Disparar conversão após um pequeno delay para garantir que gtag está pronto
+    setTimeout(trackConversion, 500);
   }, []);
 
   return (

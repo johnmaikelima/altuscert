@@ -95,14 +95,24 @@ export default function CertificadoA1PF() {
         <div className="mb-12 bg-gradient-to-r from-amber-50 to-orange-50 border-l-4 border-amber-500 rounded-lg p-6 shadow-md">
           <div className="flex items-start gap-4">
             <div className="flex-shrink-0">
-              <div className="flex items-center justify-center h-10 w-10 rounded-full bg-amber-500 text-white font-bold">!</div>
+              <div className="flex items-center justify-center h-8 w-8 rounded-full bg-blue-100 text-blue-600">
+                <span className="text-lg">🆔</span>
+              </div>
             </div>
             <div>
               <h3 className="text-lg font-bold text-amber-900 mb-3">Documentos Necessários para Emissão</h3>
               <div className="text-amber-800 leading-relaxed space-y-3">
-                <div>
-                  <p className="font-semibold mb-1">📋 Identificação (obrigatório):</p>
-                  <p><strong>CNH (Carteira Nacional de Habilitação) válida</strong> - Único documento aceito para identificação</p>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0">
+                    <div className="flex items-center justify-center h-8 w-8 rounded-full bg-blue-100 text-blue-600">
+                      <span className="text-lg">🆔</span>
+                    </div>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-amber-900">Identificação (obrigatório)</p>
+                    <p className="text-sm text-amber-800 mt-1"><strong>CNH (Carteira Nacional de Habilitação) válida</strong></p>
+                    <p className="text-xs text-amber-700 mt-1">Único documento aceito para identificação</p>
+                  </div>
                 </div>
               </div>
             </div>
