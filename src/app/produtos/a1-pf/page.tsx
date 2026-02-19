@@ -91,17 +91,20 @@ export default function CertificadoA1PF() {
 
       {/* Conteúdo Principal */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Aviso Importante - CNH Obrigatória */}
+        {/* Aviso Importante - Documentos Obrigatórios */}
         <div className="mb-12 bg-gradient-to-r from-amber-50 to-orange-50 border-l-4 border-amber-500 rounded-lg p-6 shadow-md">
           <div className="flex items-start gap-4">
             <div className="flex-shrink-0">
               <div className="flex items-center justify-center h-10 w-10 rounded-full bg-amber-500 text-white font-bold">!</div>
             </div>
             <div>
-              <h3 className="text-lg font-bold text-amber-900 mb-2">Documentos Necessários</h3>
-              <p className="text-amber-800 leading-relaxed">
-                Para a emissão do Certificado Digital A1, é <strong>obrigatório enviar uma cópia da CNH (Carteira Nacional de Habilitação) válida</strong> como anexo junto aos demais documentos solicitados. Este documento é necessário para confirmar sua identidade e garantir a segurança da transação.
-              </p>
+              <h3 className="text-lg font-bold text-amber-900 mb-3">Documentos Necessários para Emissão</h3>
+              <div className="text-amber-800 leading-relaxed space-y-3">
+                <div>
+                  <p className="font-semibold mb-1">📋 Identificação (obrigatório):</p>
+                  <p><strong>CNH (Carteira Nacional de Habilitação) válida</strong> - Único documento aceito para identificação</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -268,16 +271,15 @@ export default function CertificadoA1PF() {
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Requisitos Necessários</h2>
           <div className="bg-gray-50 p-8 rounded-lg border border-gray-200">
-            <h3 className="font-semibold text-gray-900 mb-4">Para a Videoconferência:</h3>
+            <h3 className="font-semibold text-gray-900 mb-4">Documentos Obrigatórios:</h3>
             <ul className="space-y-3 mb-6 text-gray-700">
               <li className="flex gap-3">
                 <span className="text-blue-600 font-bold">✓</span>
-                <span>Documento de identidade válido (RG, CNH ou Passaporte)</span>
+                <span><strong>CNH (Carteira Nacional de Habilitação) válida</strong> - Único documento aceito para identificação</span>
               </li>
-              <li className="flex gap-3">
-                <span className="text-blue-600 font-bold">✓</span>
-                <span>Comprovante de endereço recente (conta de água, luz ou telefone)</span>
-              </li>
+            </ul>
+            <h3 className="font-semibold text-gray-900 mb-4">Para a Videoconferência:</h3>
+            <ul className="space-y-3 mb-6 text-gray-700">
               <li className="flex gap-3">
                 <span className="text-blue-600 font-bold">✓</span>
                 <span>Câmera e microfone funcionando</span>

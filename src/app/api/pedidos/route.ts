@@ -70,6 +70,26 @@ export async function POST(request: NextRequest) {
     pedidos.push(novoPedido);
     salvarPedidos(pedidos);
 
+    // Enviar notificação por email ao administrador
+    try {
+      const tipoCertificado = tipo === 'a1-pj' ? 'Certificado A1 PJ' : 'Certificado A1 PF';
+      await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/email/notificacao-pedido`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          codigoPedido: novoPedido.id,
+          tipo: tipoCertificado,
+          preco: novoPedido.preco,
+          cliente: novoPedido.cliente,
+          dataCriacao: novoPedido.dataCriacao,
+        }),
+      });
+      console.log(`📧 Notificação de novo pedido enviada: ${novoPedido.id}`);
+    } catch (emailError) {
+      console.error('⚠️ Erro ao enviar notificação de pedido:', emailError);
+      // Não falhar a criação do pedido se o email não for enviado
+    }
+
     return NextResponse.json(novoPedido, { status: 201 });
   } catch (error) {
     console.error('Erro ao criar pedido:', error);

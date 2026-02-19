@@ -92,17 +92,28 @@ export default function CertificadoA1PJ() {
 
       {/* Conteúdo Principal */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Aviso Importante - CNH Obrigatória */}
+        {/* Aviso Importante - Documentos Obrigatórios */}
         <div className="mb-12 bg-gradient-to-r from-amber-50 to-orange-50 border-l-4 border-amber-500 rounded-lg p-6 shadow-md">
           <div className="flex items-start gap-4">
             <div className="flex-shrink-0">
               <div className="flex items-center justify-center h-10 w-10 rounded-full bg-amber-500 text-white font-bold">!</div>
             </div>
             <div>
-              <h3 className="text-lg font-bold text-amber-900 mb-2">Documentos Necessários</h3>
-              <p className="text-amber-800 leading-relaxed">
-                Para a emissão do Certificado Digital A1, é <strong>obrigatório enviar uma cópia da CNH (Carteira Nacional de Habilitação) válida</strong> como anexo junto aos demais documentos solicitados. Este documento é necessário para confirmar sua identidade e garantir a segurança da transação.
-              </p>
+              <h3 className="text-lg font-bold text-amber-900 mb-3">Documentos Necessários para Emissão</h3>
+              <div className="text-amber-800 leading-relaxed space-y-3">
+                <div>
+                  <p className="font-semibold mb-1">📋 Identificação (obrigatório):</p>
+                  <p><strong>CNH (Carteira Nacional de Habilitação) válida</strong> - Único documento aceito para identificação</p>
+                </div>
+                <div>
+                  <p className="font-semibold mb-1">🏢 Comprovante de Empresa (obrigatório - escolha uma opção):</p>
+                  <ul className="list-disc list-inside space-y-1 ml-2">
+                    <li><strong>Contrato Social</strong> da empresa</li>
+                    <li><strong>Requerimento de Empresário</strong> (para MEI)</li>
+                    <li><strong>QSA2</strong> emitido pelo <a href="https://www.gov.br/empresas-e-negocios/pt-br/redesim/comprovantes/emitir-comprovante-autenticado" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">gov.br</a> (Comprovante de Sócio/Administrador)</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -234,6 +245,7 @@ export default function CertificadoA1PJ() {
           <div className="bg-yellow-50 p-8 rounded-lg border border-yellow-200">
             <p className="text-gray-700 mb-4">O Certificado A1 PJ é ideal para:</p>
             <ul className="space-y-2 text-gray-700">
+              <li>• <strong>Emissão de NFe (Nota Fiscal Eletrônica)</strong> - Obrigatório para empresas que emitem notas fiscais</li>
               <li>• Empresas que precisam assinar documentos digitalmente</li>
               <li>• Organizações que realizam transações eletrônicas</li>
               <li>• Empresas que precisam cumprir obrigações fiscais digitais</li>
@@ -269,16 +281,33 @@ export default function CertificadoA1PJ() {
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Requisitos Necessários</h2>
           <div className="bg-gray-50 p-8 rounded-lg border border-gray-200">
-            <h3 className="font-semibold text-gray-900 mb-4">Para a Videoconferência:</h3>
+            <h3 className="font-semibold text-gray-900 mb-4">Documentos Obrigatórios:</h3>
             <ul className="space-y-3 mb-6 text-gray-700">
               <li className="flex gap-3">
                 <span className="text-blue-600 font-bold">✓</span>
-                <span>Documento de identidade válido (RG, CNH ou Passaporte)</span>
+                <span><strong>CNH (Carteira Nacional de Habilitação) válida</strong> - Único documento aceito para identificação</span>
               </li>
               <li className="flex gap-3">
                 <span className="text-blue-600 font-bold">✓</span>
-                <span>Comprovante de endereço recente (conta de água, luz ou telefone)</span>
+                <span><strong>Comprovante de Empresa</strong> (escolha uma opção):</span>
               </li>
+            </ul>
+            <ul className="space-y-2 mb-6 text-gray-700 ml-8">
+              <li className="flex gap-3 bg-green-50 p-2 rounded border border-green-200">
+                <span className="text-green-600 font-bold">★</span>
+                <span><strong>QSA2 emitido pelo <a href="https://www.gov.br/empresas-e-negocios/pt-br/redesim/comprovantes/emitir-comprovante-autenticado" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">gov.br</a></strong> (Comprovante de Sócio/Administrador) - <span className="text-green-600 font-semibold">PREFERÊNCIA</span></span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-green-600 font-bold">•</span>
+                <span>Contrato Social da empresa</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-green-600 font-bold">•</span>
+                <span>Requerimento de Empresário (para MEI)</span>
+              </li>
+            </ul>
+            <h3 className="font-semibold text-gray-900 mb-4">Para a Videoconferência:</h3>
+            <ul className="space-y-3 mb-6 text-gray-700">
               <li className="flex gap-3">
                 <span className="text-blue-600 font-bold">✓</span>
                 <span>Câmera e microfone funcionando</span>
